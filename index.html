@@ -35,65 +35,141 @@
     <style>
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #f8f9fa; /* Light gray background for the body */
+            background-color: #f8f9fa;
+            /* Light gray background for the body */
             color: #333;
             margin: 0;
             padding: 0;
-            overflow-x: hidden; /* Prevent horizontal scroll */
+            overflow-x: hidden;
+            /* Prevent horizontal scroll */
         }
-    
+
         .container-fluid {
-            background-color: #ffffff; /* White background for the container */
+            background-color: #ffffff;
+            /* White background for the container */
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
             padding: 0;
             margin: 0;
             width: 100%;
-            overflow-x: hidden; /* Prevent horizontal scroll */
+            overflow-x: hidden;
+            /* Prevent horizontal scroll */
         }
-    
+
         .titlesection {
-            background: linear-gradient(135deg, #78bafc, #bedeff); /* Gradient for the title section */
+            background: linear-gradient(135deg, #78bafc, #bedeff);
+            /* Gradient for the title section */
             color: black;
             padding: 30px 20px;
             text-align: center;
             animation: fadeInDown 1s;
         }
-    
-        .titlesection h2, .titlesection h4 {
+
+        .titlesection h2,
+        .titlesection h4 {
             font-weight: 700;
             letter-spacing: 1px;
             margin: 0;
         }
-    
+
         .titlesection a {
             color: black;
             text-decoration: none;
         }
-    
+
         .titlesection a:hover {
             text-decoration: underline;
         }
-    
+
         .titlesection .subtitle {
             font-size: 1.1rem;
             margin-top: 10px;
         }
-    
+
+        /* Logo Container */
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+            /* Space below the logo */
+        }
+
+        /* Logo Circle */
+        .logo-circle {
+            width: 100px;
+            /* Size of the circle */
+            height: 100px;
+            /* Size of the circle */
+            background-color: #007bff;
+            /* Blue background */
+            border-radius: 50%;
+            /* Makes it a circle */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            /* Adds a subtle shadow */
+            animation: pulse 2s infinite;
+            /* Continuous pulse animation */
+        }
+
+        /* Logo Text */
+        .logo-text {
+            font-size: 36px;
+            /* Size of the text */
+            font-weight: 700;
+            /* Bold text */
+            color: white;
+            /* White text color */
+            text-transform: uppercase;
+            /* Uppercase text */
+            display: flex;
+            align-items: baseline;
+            /* Aligns A and M perfectly */
+        }
+
+        /* Custom A Design */
+        .logo-a {
+            font-size: 48px;
+            /* Larger A */
+            line-height: 0.8;
+            /* Adjusts alignment */
+            transform: translateY(-5px);
+            /* Moves A slightly up */
+            animation: floatA 3s infinite ease-in-out;
+            /* Floating animation for A */
+        }
+
+        /* Custom M Design */
+        .logo-m {
+            font-size: 36px;
+            /* Smaller M */
+            line-height: 1;
+            /* Adjusts alignment */
+            transform: translateY(5px);
+            /* Moves M slightly down */
+            animation: floatM 3s infinite ease-in-out;
+            /* Floating animation for M */
+        }
+
         .mainsection {
             display: flex;
             flex-wrap: wrap;
-            gap: 0; /* No gap between left and main sections */
-            padding: 0; /* No padding */
+            gap: 0;
+            /* No gap between left and main sections */
+            padding: 0;
+            /* No padding */
         }
-    
+
         .mainleft {
-            background-color: #f0f4f8; /* Light blue-gray background for the left section */
+            background-color: #f0f4f8;
+            /* Light blue-gray background for the left section */
             color: black;
             padding: 20px;
             flex: 1;
             animation: fadeInLeft 1s;
         }
-    
+
         .mainleft .sectionhead {
             color: black;
             font-weight: 700;
@@ -101,7 +177,7 @@
             font-size: 1.2rem;
             position: relative;
         }
-    
+
         .mainleft .sectionhead::after {
             content: '';
             position: absolute;
@@ -111,43 +187,44 @@
             height: 2px;
             background-color: black;
         }
-    
+
         .mainleft ul {
             list-style-type: square;
             padding-left: 20px;
         }
-    
+
         .mainleft ul li {
             margin-bottom: 10px;
             font-size: 0.95rem;
         }
-    
+
         .mainleft .input-group-text {
             background-color: #007bff;
             color: white;
             border: none;
         }
-    
+
         .mainleft .form-control {
             background-color: transparent;
             color: black;
             border: 1px solid black;
         }
-    
+
         .mainright {
             flex: 2;
             padding: 20px;
-            background-color: #ffffff; /* White background for the right section */
+            background-color: #ffffff;
+            /* White background for the right section */
             animation: fadeInRight 1s;
         }
-    
+
         .headcls {
             font-weight: 700;
             color: #007bff;
             font-size: 1.2rem;
             position: relative;
         }
-    
+
         .headcls::after {
             content: '';
             position: absolute;
@@ -157,93 +234,146 @@
             height: 2px;
             background-color: #007bff;
         }
-    
+
         .rightcontent {
             margin-top: 15px;
         }
-    
+
         .rightcontent h5 {
             font-weight: 700;
             color: #007bff;
             font-size: 1.1rem;
         }
-    
+
         .rightcontent ul {
             list-style-type: square;
             padding-left: 20px;
         }
-    
+
         .rightcontent ul li {
             margin-bottom: 10px;
             font-size: 0.95rem;
         }
-    
+
         .footer {
             text-align: center;
-            margin-top: 0; /* No margin */
+            margin-top: 0;
+            /* No margin */
             padding: 15px;
-            background: linear-gradient(135deg, #78bafc, #bedeff); /* Gradient for the footer */
+            background: linear-gradient(135deg, #78bafc, #bedeff);
+            /* Gradient for the footer */
             color: black;
             animation: fadeInUp 1s;
         }
-    
+
         .footer a {
             color: black;
             text-decoration: none;
         }
-    
+
         .footer a:hover {
             text-decoration: underline;
         }
-    
+
+        /* Pulse Animation for Circle */
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.4);
+            }
+
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 0 0 10px rgba(0, 123, 255, 0);
+            }
+
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.4);
+            }
+        }
+
+        /* Floating Animation for A */
+        @keyframes floatA {
+
+            0%,
+            100% {
+                transform: translateY(-5px);
+            }
+
+            50% {
+                transform: translateY(5px);
+            }
+        }
+
+        /* Floating Animation for M */
+        @keyframes floatM {
+
+            0%,
+            100% {
+                transform: translateY(5px);
+            }
+
+            50% {
+                transform: translateY(-5px);
+            }
+        }
+
         @keyframes fadeInDown {
             from {
                 opacity: 0;
                 transform: translateY(-20px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
-    
+
         @keyframes fadeInLeft {
             from {
                 opacity: 0;
                 transform: translateX(-20px);
             }
+
             to {
                 opacity: 1;
                 transform: translateX(0);
             }
         }
-    
+
         @keyframes fadeInRight {
             from {
                 opacity: 0;
                 transform: translateX(20px);
             }
+
             to {
                 opacity: 1;
                 transform: translateX(0);
             }
         }
-    
+
         @keyframes fadeInUp {
             from {
                 opacity: 0;
                 transform: translateY(20px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
-    
+
         /* Responsive Design */
         @media (max-width: 992px) {
-            .mainleft, .mainright {
-                flex: 100%; /* Full width on smaller screens */
+
+            .mainleft,
+            .mainright {
+                flex: 100%;
+                /* Full width on smaller screens */
             }
         }
     </style>
@@ -255,22 +385,39 @@
         <!-- title heading portion -->
         <div class="row titlesection">
             <div class="col-lg-5 text-center align-self-center">
+                <!-- Logo or Design (AM) -->
+                <div class="logo-container mb-3">
+                    <div class="logo-circle">
+                        <span class="logo-text">
+                            <span class="logo-a">A</span>
+                            <span class="logo-m">M</span>
+                        </span>
+                    </div>
+                </div>
+
                 <h2 class="d-none d-lg-block animate__animated animate__fadeInDown">Ashique Murad</h2>
                 <h4 class="d-block d-lg-none animate__animated animate__fadeInDown">Ashique Murad</h4>
 
                 <p class="subtitle fw-semibold m-0">Job Seeker</p>
-                <p class="subtitle fw-semibold m-0 d-none d-lg-block">Ex-IT Executive, Aspiring Software Developer, Tech Enthusiast</p>
+                <p class="subtitle fw-semibold m-0 d-none d-lg-block">Ex-IT Executive, Aspiring Software Developer, Tech
+                    Enthusiast</p>
             </div>
             <div class="col titleright">
                 <div class="row align-items-center justify-content-evenly h-100">
                     <div class="col-auto">
-                        <div class="py-1"><i class="fa-solid fa-envelope pe-2 pe-lg-1"></i><a href="mailto:imambuet11@gmail.com" target="_blank">ashiquemurad@gmail.com</a></div>
-                        <div class="py-1 d-none d-lg-block"><i class="fa-solid fa-phone-volume pe-2 pe-lg-1"></i><a href="tel:+8801552929499" target="_blank">+8801626484541</a></div>
-                        <div class="py-1"><i class="fa-solid fa-map-location pe-2 pe-lg-1"></i><a href="https://goo.gl/maps/6MPdHGdEd39353pJ6" target="_blank">Dhaka, Bangladesh</a></div>
+                        <div class="py-1"><i class="fa-solid fa-envelope pe-2 pe-lg-1"></i><a
+                                href="mailto:imambuet11@gmail.com" target="_blank">ashiquemurad@gmail.com</a></div>
+                        <div class="py-1 d-none d-lg-block"><i class="fa-solid fa-phone-volume pe-2 pe-lg-1"></i><a
+                                href="tel:+8801552929499" target="_blank">+8801626484541</a></div>
+                        <div class="py-1"><i class="fa-solid fa-map-location pe-2 pe-lg-1"></i><a
+                                href="https://goo.gl/maps/6MPdHGdEd39353pJ6" target="_blank">Dhaka, Bangladesh</a></div>
                     </div>
                     <div class="col-auto">
-                        <div class="py-1"><i class="fa-brands fa-github pe-2 pe-lg-1"></i><a href="https://github.com/Ashique01" target="_blank">github.com/Ashique01</a></div>
-                        <div class="py-1"><i class="fa-brands fa-linkedin pe-2 pe-lg-1"></i><a href="https://www.linkedin.com/in/ashique-murad-07834b120/" target="_blank">linkedin.com/in/ashique-murad-07834b120/</a></div>
+                        <div class="py-1"><i class="fa-brands fa-github pe-2 pe-lg-1"></i><a
+                                href="https://github.com/Ashique01" target="_blank">github.com/Ashique01</a></div>
+                        <div class="py-1"><i class="fa-brands fa-linkedin pe-2 pe-lg-1"></i><a
+                                href="https://www.linkedin.com/in/ashique-murad-07834b120/"
+                                target="_blank">linkedin.com/in/ashique-murad-07834b120/</a></div>
                     </div>
                 </div>
             </div>
@@ -286,12 +433,15 @@
                 <div class="mt-0 mt-lg-2">
                     <h4 class="sectionhead">Technical Skills</h4>
                     <ul>
-                        <li><span class="fw-bold">Programming Languages:</span> Proficient in C, C#, .Net Core, Python, SQL, HTML, JavaScript, React; also basic ability with Java.</li>
+                        <li><span class="fw-bold">Programming Languages:</span> Proficient in C, C#, .Net Core, Python,
+                            SQL, HTML, JavaScript, React; also basic ability with Java.</li>
                         <li><span class="fw-bold">Operating Systems:</span> Windows and Linux</li>
                         <li><span class="fw-bold">Version Control:</span> Git and GitHub</li>
-                        <li><span class="fw-bold">Software Tools:</span> Visual Studio Code, IntelliJ IDEA, Atom, PyCharm, Jupyter Notebook, Audacity</li>
+                        <li><span class="fw-bold">Software Tools:</span> Visual Studio Code, IntelliJ IDEA, Atom,
+                            PyCharm, Jupyter Notebook, Audacity</li>
                         <li><span class="fw-bold">Industry Software Skills:</span> Microsoft Office</li>
-                        <li><span class="fw-bold">General Business Skills:</span> Management skills; works well in a team.</li>
+                        <li><span class="fw-bold">General Business Skills:</span> Management skills; works well in a
+                            team.</li>
                         <li><span class="fw-bold">Other:</span> Can write well-organized and structured reports.</li>
                     </ul>
                 </div>
@@ -305,51 +455,79 @@
                             <p class="mb-1">A digital website for booking dental doctors</p>
                             <p class="mb-1">- Technology: ReactJs, HTML, CSS, JS, Bootstrap</p>
                             <div class="input-group input-group-sm mb-3">
-                                <input type="url" class="form-control text-end bg-transparent" value="https://am-dental-clinic.netlify.app/" readonly>
-                                <span class="input-group-text bg-transparent"><a href="https://am-dental-clinic.netlify.app/" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></span>
+                                <input type="url" class="form-control text-end bg-transparent"
+                                    value="https://am-dental-clinic.netlify.app/" readonly>
+                                <span class="input-group-text bg-transparent"><a
+                                        href="https://am-dental-clinic.netlify.app/" target="_blank"><i
+                                            class="fa-solid fa-arrow-up-right-from-square"></i></a></span>
                             </div>
                         </li>
                         <li>
                             <span class="fw-bold">DSM: Delivery Service Management </span><br>
-                            <p class="mb-1">This is Delivery base website.Here there are some delivery services.Anyone can get the services.</p>
+                            <p class="mb-1">This is Delivery base website.Here there are some delivery services.Anyone
+                                can get the services.</p>
                             <div class="input-group input-group-sm mb-3">
-                                <input type="url" class="form-control text-end bg-transparent" value="https://delivery-management-syst-93325.web.app/" readonly>
-                                <span class="input-group-text bg-transparent"><a href="https://delivery-management-syst-93325.web.app/" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></span>
+                                <input type="url" class="form-control text-end bg-transparent"
+                                    value="https://delivery-management-syst-93325.web.app/" readonly>
+                                <span class="input-group-text bg-transparent"><a
+                                        href="https://delivery-management-syst-93325.web.app/" target="_blank"><i
+                                            class="fa-solid fa-arrow-up-right-from-square"></i></a></span>
                             </div>
                         </li>
                         <li>
                             <span class="fw-bold">Local Box Store</span><br>
                             <p class="mb-1">A web app for ecommerce where you can buy your needs</p>
                             <div class="input-group input-group-sm mb-3">
-                                <input type="url" class="form-control text-end bg-transparent" value="https://kena-becha-f231d.web.app/" readonly>
-                                <span class="input-group-text bg-transparent"><a href="https://kena-becha-f231d.web.app/" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></span>
+                                <input type="url" class="form-control text-end bg-transparent"
+                                    value="https://kena-becha-f231d.web.app/" readonly>
+                                <span class="input-group-text bg-transparent"><a
+                                        href="https://kena-becha-f231d.web.app/" target="_blank"><i
+                                            class="fa-solid fa-arrow-up-right-from-square"></i></a></span>
                             </div>
                         </li>
                         <li>
                             <span class="fw-bold">Paragraph Generator</span><br>
-                            <p class="mb-1">The Paragraph Generator is a web application built with React. It allows users to generate paragraphs of text by specifying the number of paragraphs they want. The project uses the provided data to display the generated paragraphs.</p>
+                            <p class="mb-1">The Paragraph Generator is a web application built with React. It allows
+                                users to generate paragraphs of text by specifying the number of paragraphs they want.
+                                The project uses the provided data to display the generated paragraphs.</p>
                             <div class="input-group input-group-sm mb-3">
-                                <input type="url" class="form-control text-end bg-transparent" value="https://paragraph-generator-handlelingbutton.netlify.app/" readonly>
-                                <span class="input-group-text bg-transparent"><a href="https://paragraph-generator-handlelingbutton.netlify.app/" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></span>
+                                <input type="url" class="form-control text-end bg-transparent"
+                                    value="https://paragraph-generator-handlelingbutton.netlify.app/" readonly>
+                                <span class="input-group-text bg-transparent"><a
+                                        href="https://paragraph-generator-handlelingbutton.netlify.app/"
+                                        target="_blank"><i
+                                            class="fa-solid fa-arrow-up-right-from-square"></i></a></span>
                             </div>
                         </li>
                         <li>
                             <span class="fw-bold">Food-explorer-functionality</span><br>
-                            <p>The Food App is a simple web application that showcases different food items categorized into breakfast, lunch, dinner, and juices. Users can explore the available food items, filter them by category, and view their details.</p>
+                            <p>The Food App is a simple web application that showcases different food items categorized
+                                into breakfast, lunch, dinner, and juices. Users can explore the available food items,
+                                filter them by category, and view their details.</p>
                             <div class="input-group input-group-sm mb-3">
-                                <input type="url" class="form-control text-end bg-transparent" value="https://food-explorer-functionality.netlify.app" readonly>
-                                <span class="input-group-text bg-transparent"><a href="https://food-explorer-functionality.netlify.app" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></span>
+                                <input type="url" class="form-control text-end bg-transparent"
+                                    value="https://food-explorer-functionality.netlify.app" readonly>
+                                <span class="input-group-text bg-transparent"><a
+                                        href="https://food-explorer-functionality.netlify.app" target="_blank"><i
+                                            class="fa-solid fa-arrow-up-right-from-square"></i></a></span>
                             </div>
                         </li>
                         <li>
                             <span class="fw-bold">Academic Projects</span><br>
                             <ul style="list-style-type: square;" class="mb-3">
-                                <li style='margin-top:5px;'>Final Year Design Project <span class="fw-bold">Spam Email Detection with</span>
+                                <li style='margin-top:5px;'>Final Year Design Project <span class="fw-bold">Spam Email
+                                        Detection with</span>
                                     e.g. <br>- Decision Tree<br>- Naive Bayes<br>- Random Forest<br>- Neural Network
                                 </li>
-                                <li style='margin-top:3px;'><span class="fw-bold">Learning Mate</span><br />- A platform for solving academic related problems<br>- Technology: PHP, MySql, Bootstrap & JavaScript </li>
-                                <li style='margin-top:3px;'><span class="fw-bold">Bloodcon</span> <small>[Group project]</small><br />- A web app with database for finding blood donors<br>- Technology: PHP, MySql, Bootstrap and JavaScript</li>
-                                <li style='margin-top:3px;'><span class="fw-bold">JoyMaker</span> <small>[Group project]</small><br />- A web app for finding unused medicines<br />- Technology: Reactjs, Mongodb, Bootstrap</li>
+                                <li style='margin-top:3px;'><span class="fw-bold">Learning Mate</span><br />- A platform
+                                    for solving academic related problems<br>- Technology: PHP, MySql, Bootstrap &
+                                    JavaScript </li>
+                                <li style='margin-top:3px;'><span class="fw-bold">Bloodcon</span> <small>[Group
+                                        project]</small><br />- A web app with database for finding blood donors<br>-
+                                    Technology: PHP, MySql, Bootstrap and JavaScript</li>
+                                <li style='margin-top:3px;'><span class="fw-bold">JoyMaker</span> <small>[Group
+                                        project]</small><br />- A web app for finding unused medicines<br />-
+                                    Technology: Reactjs, Mongodb, Bootstrap</li>
                             </ul>
                         </li>
                     </ul>
@@ -363,7 +541,8 @@
                 <!-- experience section -->
                 <div class="mt-0 mt-lg-2">
                     <div>
-                        <h4 class="headcls"><i class="fa-brands fa-black-tie pe-3 pe-lg-2 align-middle"></i>Professional Experience</h4>
+                        <h4 class="headcls"><i class="fa-brands fa-black-tie pe-3 pe-lg-2 align-middle"></i>Professional
+                            Experience</h4>
                     </div>
 
                     <div class="rightcontent">
@@ -384,9 +563,12 @@
                             <div class="col mt-2 mt-lg-0">
                                 <div class="fw-bold">Achievements/Tasks:</div>
                                 <ul class="mb-1">
-                                    <li>Provided IT support for company staff, ensuring smooth technical operations.</li>
-                                    <li>Managed software installations, hardware troubleshooting, and network support.</li>
-                                    <li>Worked closely with departments to optimize IT solutions and enhance overall workflow.</li>
+                                    <li>Provided IT support for company staff, ensuring smooth technical operations.
+                                    </li>
+                                    <li>Managed software installations, hardware troubleshooting, and network support.
+                                    </li>
+                                    <li>Worked closely with departments to optimize IT solutions and enhance overall
+                                        workflow.</li>
                                 </ul>
                             </div>
                         </div>
@@ -407,7 +589,13 @@
 
                             <div class="col mt-2 mt-lg-0">
                                 <div class="fw-bold">Description:</div>
-                                <p class="mb-1">Since April 2024, I have been working with a mentor, contributing to various client projects and internal initiatives. Although I am not directly active on platforms like Fiverr and Upwork, my work has involved handling various technical tasks, enhancing my skills in software development, project management, and team collaboration. This experience has allowed me to adapt to different technical challenges and gain a deeper understanding of professional workflows, significantly broadening my expertise in the field.</p>
+                                <p class="mb-1">Since April 2024, I have been working with a mentor, contributing to
+                                    various client projects and internal initiatives. Although I am not directly active
+                                    on platforms like Fiverr and Upwork, my work has involved handling various technical
+                                    tasks, enhancing my skills in software development, project management, and team
+                                    collaboration. This experience has allowed me to adapt to different technical
+                                    challenges and gain a deeper understanding of professional workflows, significantly
+                                    broadening my expertise in the field.</p>
                             </div>
                         </div>
                     </div>
@@ -416,7 +604,8 @@
                 <!-- education section -->
                 <div class="mt-0 mt-lg-2">
                     <div>
-                        <h4 class="headcls"><i class="fa-solid fa-graduation-cap pe-3 pe-lg-2 align-middle"></i>Education</h4>
+                        <h4 class="headcls"><i
+                                class="fa-solid fa-graduation-cap pe-3 pe-lg-2 align-middle"></i>Education</h4>
                     </div>
 
                     <div class="rightcontent">
@@ -426,7 +615,8 @@
                                 <div class="row office">
                                     <div class="col-lg-12 col-7">
                                         Dept. of CSE,
-                                        <br /><a href="https://www.uiu.ac.bd" target="_blank">United International University</a>,
+                                        <br /><a href="https://www.uiu.ac.bd" target="_blank">United International
+                                            University</a>,
                                         <br />Bangladesh.<br>
                                     </div>
                                 </div>
@@ -436,7 +626,9 @@
                                 <div class="fw-bold">CGPA: 3.09 out of 4.00</div>
                                 <div class="mt-3">
                                     <div class="fw-bold">Relevant Coursework:</div>
-                                    Machine Learning, Web Programming, Data Structures and Algorithms, Object-Oriented Programming (OOP), Database Management Systems (DBMS), Software Engineering, Theory of Computation, Operating Systems, Artificial Intelligence.
+                                    Machine Learning, Web Programming, Data Structures and Algorithms, Object-Oriented
+                                    Programming (OOP), Database Management Systems (DBMS), Software Engineering, Theory
+                                    of Computation, Operating Systems, Artificial Intelligence.
                                 </div>
                             </div>
                         </div>
@@ -498,7 +690,9 @@
                 <!-- professional development section -->
                 <div>
                     <div>
-                        <h4 class="headcls"><i class="fa-solid fa-screwdriver-wrench pe-3 pe-lg-2 align-middle"></i>Professional Development</h4>
+                        <h4 class="headcls"><i
+                                class="fa-solid fa-screwdriver-wrench pe-3 pe-lg-2 align-middle"></i>Professional
+                            Development</h4>
                     </div>
 
                     <div class='rightcontent'>
@@ -506,12 +700,15 @@
                             <div class="col-lg-6">
                                 <div><a href="#" target="_blank">Web Development Course</a></div>
                                 <div class="office">Programming Hero, 2021</div>
-                                Completed a comprehensive web development course covering HTML, CSS, JavaScript, and responsive web design techniques.
+                                Completed a comprehensive web development course covering HTML, CSS, JavaScript, and
+                                responsive web design techniques.
                             </div>
                             <div class="col-lg-6 mt-2 mt-lg-0">
-                                <div><a href="#" target="_blank">Full Stack Web Development with C#, OOP, MS SQL & ASP.NET MVC</a></div>
+                                <div><a href="#" target="_blank">Full Stack Web Development with C#, OOP, MS SQL &
+                                        ASP.NET MVC</a></div>
                                 <div class="office">Udemy, 2024</div>
-                                Learned full stack web development using C#, object-oriented programming, Microsoft SQL Server, and ASP.NET MVC framework.
+                                Learned full stack web development using C#, object-oriented programming, Microsoft SQL
+                                Server, and ASP.NET MVC framework.
                             </div>
                         </div>
                     </div>
@@ -520,7 +717,8 @@
                 <!-- reference section -->
                 <div>
                     <div>
-                        <h4 class="headcls"><i class="fa-solid fa-user-group pe-3 pe-lg-2 align-middle"></i>References</h4>
+                        <h4 class="headcls"><i class="fa-solid fa-user-group pe-3 pe-lg-2 align-middle"></i>References
+                        </h4>
                     </div>
 
                     <div class="rightcontent">
@@ -528,9 +726,11 @@
                             <div class="col-lg-6">
                                 <div class="fw-bold">Dr. Mohammad Nurul Huda</div>
                                 <div>
-                                    Professor & Dept Head of Computer Science and Engineering,<br> United International University
+                                    Professor & Dept Head of Computer Science and Engineering,<br> United International
+                                    University
                                     <br>
-                                    <p><b>Email:</b> <a href="mailto:mnh@cse.uiu.ac.bd" style="font-weight:normal;">mnh@cse.uiu.ac.bd</a></p>
+                                    <p><b>Email:</b> <a href="mailto:mnh@cse.uiu.ac.bd"
+                                            style="font-weight:normal;">mnh@cse.uiu.ac.bd</a></p>
                                 </div>
                             </div>
                         </div>
@@ -542,7 +742,9 @@
 
         <!--footer-->
         <div class="footer">
-            <strong>Ashique Murad</strong> | Email: <strong><a href="mailto:ashiquemurad@gmail.com" style="color:inherit;">ashiquemurad@gmail.com</a></strong> | All Rights Reserved | &copy; <span id="currentYear"></span>
+            <strong>Ashique Murad</strong> | Email: <strong><a href="mailto:ashiquemurad@gmail.com"
+                    style="color:inherit;">ashiquemurad@gmail.com</a></strong> | All Rights Reserved | &copy; <span
+                id="currentYear"></span>
         </div>
 
     </div>
