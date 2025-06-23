@@ -1,757 +1,1066 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <meta name="author" content="Ashique Murad">
-    <meta name="description" content="Resume of Ashique Murad. Email: imambuet11@gmail.com">
-
-    <meta name="og:image" content="images/icon.png">
-
-    <!-- Bootstrap 5.3.2 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Font Awesome 6.4.2 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-
-    <!-- Animate.css 4.1.1 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css">
-
-    <link rel="icon" href="images/icon.png">
-
-    <title>Resume | Ashique Murad</title>
-
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #f8f9fa;
-            /* Light gray background for the body */
-            color: #333;
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
-            /* Prevent horizontal scroll */
-        }
-
-        .container-fluid {
-            background-color: #ffffff;
-            /* White background for the container */
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-            padding: 0;
-            margin: 0;
-            width: 100%;
-            overflow-x: hidden;
-            /* Prevent horizontal scroll */
-        }
-
-        .titlesection {
-            background: linear-gradient(135deg, #78bafc, #bedeff);
-            /* Gradient for the title section */
-            color: black;
-            padding: 30px 20px;
-            text-align: center;
-            animation: fadeInDown 1s;
-        }
-
-        .titlesection h2,
-        .titlesection h4 {
-            font-weight: 700;
-            letter-spacing: 1px;
-            margin: 0;
-        }
-
-        .titlesection a {
-            color: black;
-            text-decoration: none;
-        }
-
-        .titlesection a:hover {
-            text-decoration: underline;
-        }
-
-        .titlesection .subtitle {
-            font-size: 1.1rem;
-            margin-top: 10px;
-        }
-
-        /* Logo Container */
-        .logo-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 20px;
-            /* Space below the logo */
-        }
-
-        /* Logo Circle */
-        .logo-circle {
-            width: 100px;
-            /* Size of the circle */
-            height: 100px;
-            /* Size of the circle */
-            background-color: #007bff;
-            /* Blue background */
-            border-radius: 50%;
-            /* Makes it a circle */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            /* Adds a subtle shadow */
-            animation: pulse 2s infinite;
-            /* Continuous pulse animation */
-        }
-
-        /* Logo Text */
-        .logo-text {
-            font-size: 36px;
-            /* Size of the text */
-            font-weight: 700;
-            /* Bold text */
-            color: white;
-            /* White text color */
-            text-transform: uppercase;
-            /* Uppercase text */
-            display: flex;
-            align-items: baseline;
-            /* Aligns A and M perfectly */
-        }
-
-        /* Custom A Design */
-        .logo-a {
-            font-size: 48px;
-            /* Larger A */
-            line-height: 0.8;
-            /* Adjusts alignment */
-            transform: translateY(-5px);
-            /* Moves A slightly up */
-            animation: floatA 3s infinite ease-in-out;
-            /* Floating animation for A */
-        }
-
-        /* Custom M Design */
-        .logo-m {
-            font-size: 36px;
-            /* Smaller M */
-            line-height: 1;
-            /* Adjusts alignment */
-            transform: translateY(5px);
-            /* Moves M slightly down */
-            animation: floatM 3s infinite ease-in-out;
-            /* Floating animation for M */
-        }
-
-        .mainsection {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0;
-            /* No gap between left and main sections */
-            padding: 0;
-            /* No padding */
-        }
-
-        .mainleft {
-            background-color: #f0f4f8;
-            /* Light blue-gray background for the left section */
-            color: black;
-            padding: 20px;
-            flex: 1;
-            animation: fadeInLeft 1s;
-        }
-
-        .mainleft .sectionhead {
-            color: black;
-            font-weight: 700;
-            margin-bottom: 15px;
-            font-size: 1.2rem;
-            position: relative;
-        }
-
-        .mainleft .sectionhead::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: -5px;
-            width: 50px;
-            height: 2px;
-            background-color: black;
-        }
-
-        .mainleft ul {
-            list-style-type: square;
-            padding-left: 20px;
-        }
-
-        .mainleft ul li {
-            margin-bottom: 10px;
-            font-size: 0.95rem;
-        }
-
-        .mainleft .input-group-text {
-            background-color: #007bff;
-            color: white;
-            border: none;
-        }
-
-        .mainleft .form-control {
-            background-color: transparent;
-            color: black;
-            border: 1px solid black;
-        }
-
-        .mainright {
-            flex: 2;
-            padding: 20px;
-            background-color: #ffffff;
-            /* White background for the right section */
-            animation: fadeInRight 1s;
-        }
-
-        .headcls {
-            font-weight: 700;
-            color: #007bff;
-            font-size: 1.2rem;
-            position: relative;
-        }
-
-        .headcls::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: -5px;
-            width: 50px;
-            height: 2px;
-            background-color: #007bff;
-        }
-
-        .rightcontent {
-            margin-top: 15px;
-        }
-
-        .rightcontent h5 {
-            font-weight: 700;
-            color: #007bff;
-            font-size: 1.1rem;
-        }
-
-        .rightcontent ul {
-            list-style-type: square;
-            padding-left: 20px;
-        }
-
-        .rightcontent ul li {
-            margin-bottom: 10px;
-            font-size: 0.95rem;
-        }
-
-        .footer {
-            text-align: center;
-            margin-top: 0;
-            /* No margin */
-            padding: 15px;
-            background: linear-gradient(135deg, #78bafc, #bedeff);
-            /* Gradient for the footer */
-            color: black;
-            animation: fadeInUp 1s;
-        }
-
-        .footer a {
-            color: black;
-            text-decoration: none;
-        }
-
-        .footer a:hover {
-            text-decoration: underline;
-        }
-
-        /* Pulse Animation for Circle */
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-                box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.4);
-            }
-
-            50% {
-                transform: scale(1.05);
-                box-shadow: 0 0 0 10px rgba(0, 123, 255, 0);
-            }
-
-            100% {
-                transform: scale(1);
-                box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.4);
-            }
-        }
-
-        /* Floating Animation for A */
-        @keyframes floatA {
-
-            0%,
-            100% {
-                transform: translateY(-5px);
-            }
-
-            50% {
-                transform: translateY(5px);
-            }
-        }
-
-        /* Floating Animation for M */
-        @keyframes floatM {
-
-            0%,
-            100% {
-                transform: translateY(5px);
-            }
-
-            50% {
-                transform: translateY(-5px);
-            }
-        }
-
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes fadeInRight {
-            from {
-                opacity: 0;
-                transform: translateX(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Responsive Design */
-        @media (max-width: 992px) {
-
-            .mainleft,
-            .mainright {
-                flex: 100%;
-                /* Full width on smaller screens */
-            }
-        }
-    </style>
-</head>
-
-<body>
-    <div class="container-fluid">
-
-        <!-- title heading portion -->
-        <div class="row titlesection">
-            <div class="col-lg-5 text-center align-self-center">
-                <!-- Logo or Design (AM) -->
-                <div class="logo-container mb-3">
-                    <div class="logo-circle">
-                        <span class="logo-text">
-                            <span class="logo-a">A</span>
-                            <span class="logo-m">M</span>
-                        </span>
-                    </div>
-                </div>
-
-                <h2 class="d-none d-lg-block animate__animated animate__fadeInDown">Ashique Murad</h2>
-                <h4 class="d-block d-lg-none animate__animated animate__fadeInDown">Ashique Murad</h4>
-
-                <p class="subtitle fw-semibold m-0">Job Seeker</p>
-                <p class="subtitle fw-semibold m-0 d-none d-lg-block">Ex-IT Executive, Aspiring Software Developer, Tech
-                    Enthusiast</p>
-            </div>
-            <div class="col titleright">
-                <div class="row align-items-center justify-content-evenly h-100">
-                    <div class="col-auto">
-                        <div class="py-1"><i class="fa-solid fa-envelope pe-2 pe-lg-1"></i><a
-                                href="mailto:imambuet11@gmail.com" target="_blank">ashiquemurad@gmail.com</a></div>
-                        <div class="py-1 d-none d-lg-block"><i class="fa-solid fa-phone-volume pe-2 pe-lg-1"></i><a
-                                href="tel:+8801552929499" target="_blank">+8801626484541</a></div>
-                        <div class="py-1"><i class="fa-solid fa-map-location pe-2 pe-lg-1"></i><a
-                                href="https://goo.gl/maps/6MPdHGdEd39353pJ6" target="_blank">Dhaka, Bangladesh</a></div>
-                    </div>
-                    <div class="col-auto">
-                        <div class="py-1"><i class="fa-brands fa-github pe-2 pe-lg-1"></i><a
-                                href="https://github.com/Ashique01" target="_blank">github.com/Ashique01</a></div>
-                        <div class="py-1"><i class="fa-brands fa-linkedin pe-2 pe-lg-1"></i><a
-                                href="https://www.linkedin.com/in/ashique-murad-07834b120/"
-                                target="_blank">linkedin.com/in/ashique-murad-07834b120/</a></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- main cv section -->
-        <div class="row mainsection">
-
-            <!-- left section -->
-            <div class="col-12 col-lg-4 mainleft">
-
-                <!-- technical skill section -->
-                <div class="mt-0 mt-lg-2">
-                    <h4 class="sectionhead">Technical Skills</h4>
-                    <ul>
-                        <li><span class="fw-bold">Programming Languages:</span> Proficient in C, C#, .Net Core, Python,
-                            SQL, HTML, JavaScript, React; also basic ability with Java.</li>
-                        <li><span class="fw-bold">Operating Systems:</span> Windows and Linux</li>
-                        <li><span class="fw-bold">Version Control:</span> Git and GitHub</li>
-                        <li><span class="fw-bold">Software Tools:</span> Visual Studio Code, IntelliJ IDEA, Atom,
-                            PyCharm, Jupyter Notebook, Audacity</li>
-                        <li><span class="fw-bold">Industry Software Skills:</span> Microsoft Office</li>
-                        <li><span class="fw-bold">General Business Skills:</span> Management skills; works well in a
-                            team.</li>
-                        <li><span class="fw-bold">Other:</span> Can write well-organized and structured reports.</li>
-                    </ul>
-                </div>
-
-                <!-- project section -->
-                <div>
-                    <h4 class="sectionhead">Key Projects</h4>
-                    <ul>
-                        <li>
-                            <span class="fw-bold">AM Dental Clinic</span><br>
-                            <p class="mb-1">A digital website for booking dental doctors</p>
-                            <p class="mb-1">- Technology: ReactJs, HTML, CSS, JS, Bootstrap</p>
-                            <div class="input-group input-group-sm mb-3">
-                                <input type="url" class="form-control text-end bg-transparent"
-                                    value="https://am-dental-clinic.netlify.app/" readonly>
-                                <span class="input-group-text bg-transparent"><a
-                                        href="https://am-dental-clinic.netlify.app/" target="_blank"><i
-                                            class="fa-solid fa-arrow-up-right-from-square"></i></a></span>
-                            </div>
-                        </li>
-                        <li>
-                            <span class="fw-bold">DSM: Delivery Service Management </span><br>
-                            <p class="mb-1">This is Delivery base website.Here there are some delivery services.Anyone
-                                can get the services.</p>
-                            <div class="input-group input-group-sm mb-3">
-                                <input type="url" class="form-control text-end bg-transparent"
-                                    value="https://delivery-management-syst-93325.web.app/" readonly>
-                                <span class="input-group-text bg-transparent"><a
-                                        href="https://delivery-management-syst-93325.web.app/" target="_blank"><i
-                                            class="fa-solid fa-arrow-up-right-from-square"></i></a></span>
-                            </div>
-                        </li>
-                        <li>
-                            <span class="fw-bold">Local Box Store</span><br>
-                            <p class="mb-1">A web app for ecommerce where you can buy your needs</p>
-                            <div class="input-group input-group-sm mb-3">
-                                <input type="url" class="form-control text-end bg-transparent"
-                                    value="https://kena-becha-f231d.web.app/" readonly>
-                                <span class="input-group-text bg-transparent"><a
-                                        href="https://kena-becha-f231d.web.app/" target="_blank"><i
-                                            class="fa-solid fa-arrow-up-right-from-square"></i></a></span>
-                            </div>
-                        </li>
-                        <li>
-                            <span class="fw-bold">Paragraph Generator</span><br>
-                            <p class="mb-1">The Paragraph Generator is a web application built with React. It allows
-                                users to generate paragraphs of text by specifying the number of paragraphs they want.
-                                The project uses the provided data to display the generated paragraphs.</p>
-                            <div class="input-group input-group-sm mb-3">
-                                <input type="url" class="form-control text-end bg-transparent"
-                                    value="https://paragraph-generator-handlelingbutton.netlify.app/" readonly>
-                                <span class="input-group-text bg-transparent"><a
-                                        href="https://paragraph-generator-handlelingbutton.netlify.app/"
-                                        target="_blank"><i
-                                            class="fa-solid fa-arrow-up-right-from-square"></i></a></span>
-                            </div>
-                        </li>
-                        <li>
-                            <span class="fw-bold">Food-explorer-functionality</span><br>
-                            <p>The Food App is a simple web application that showcases different food items categorized
-                                into breakfast, lunch, dinner, and juices. Users can explore the available food items,
-                                filter them by category, and view their details.</p>
-                            <div class="input-group input-group-sm mb-3">
-                                <input type="url" class="form-control text-end bg-transparent"
-                                    value="https://food-explorer-functionality.netlify.app" readonly>
-                                <span class="input-group-text bg-transparent"><a
-                                        href="https://food-explorer-functionality.netlify.app" target="_blank"><i
-                                            class="fa-solid fa-arrow-up-right-from-square"></i></a></span>
-                            </div>
-                        </li>
-                        <li>
-                            <span class="fw-bold">Academic Projects</span><br>
-                            <ul style="list-style-type: square;" class="mb-3">
-                                <li style='margin-top:5px;'>Final Year Design Project <span class="fw-bold">Spam Email
-                                        Detection with</span>
-                                    e.g. <br>- Decision Tree<br>- Naive Bayes<br>- Random Forest<br>- Neural Network
-                                </li>
-                                <li style='margin-top:3px;'><span class="fw-bold">Learning Mate</span><br />- A platform
-                                    for solving academic related problems<br>- Technology: PHP, MySql, Bootstrap &
-                                    JavaScript </li>
-                                <li style='margin-top:3px;'><span class="fw-bold">Bloodcon</span> <small>[Group
-                                        project]</small><br />- A web app with database for finding blood donors<br>-
-                                    Technology: PHP, MySql, Bootstrap and JavaScript</li>
-                                <li style='margin-top:3px;'><span class="fw-bold">JoyMaker</span> <small>[Group
-                                        project]</small><br />- A web app for finding unused medicines<br />-
-                                    Technology: Reactjs, Mongodb, Bootstrap</li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-
-            </div>
-
-            <!-- right section -->
-            <div class="col-12 col-lg-8 mainright">
-
-                <!-- experience section -->
-                <div class="mt-0 mt-lg-2">
-                    <div>
-                        <h4 class="headcls"><i class="fa-brands fa-black-tie pe-3 pe-lg-2 align-middle"></i>Professional
-                            Experience</h4>
-                    </div>
-
-                    <div class="rightcontent">
-                        <div class="row">
-                            <div class="col-12 col-lg-4">
-                                <h5 class="fw-bold">IT Executive</h5>
-                                <div class="row office">
-                                    <div class="col-7 col-lg-12">
-                                        Legalized Education Bangladesh Ltd,
-                                        <br> Bangladesh.
-                                    </div>
-                                    <div class="col-5 col-lg-12 mt-2 mt-lg-3">
-                                        Aug 2023 - Jun 2024
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col mt-2 mt-lg-0">
-                                <div class="fw-bold">Achievements/Tasks:</div>
-                                <ul class="mb-1">
-                                    <li>Provided IT support for company staff, ensuring smooth technical operations.
-                                    </li>
-                                    <li>Managed software installations, hardware troubleshooting, and network support.
-                                    </li>
-                                    <li>Worked closely with departments to optimize IT solutions and enhance overall
-                                        workflow.</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <hr class="my-1">
-                        <div class="row">
-                            <div class="col-12 col-lg-4">
-                                <h5 class="fw-bold">Freelancer (Project-based Work)</h5>
-                                <div class="row office">
-                                    <div class="col-7 col-lg-12">
-                                        Freelance Projects,
-                                        <br> Bangladesh.
-                                    </div>
-                                    <div class="col-5 col-lg-12 mt-2 mt-lg-3">
-                                        Apr 2024 - Present
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col mt-2 mt-lg-0">
-                                <div class="fw-bold">Description:</div>
-                                <p class="mb-1">Since April 2024, I have been working with a mentor, contributing to
-                                    various client projects and internal initiatives. Although I am not directly active
-                                    on platforms like Fiverr and Upwork, my work has involved handling various technical
-                                    tasks, enhancing my skills in software development, project management, and team
-                                    collaboration. This experience has allowed me to adapt to different technical
-                                    challenges and gain a deeper understanding of professional workflows, significantly
-                                    broadening my expertise in the field.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- education section -->
-                <div class="mt-0 mt-lg-2">
-                    <div>
-                        <h4 class="headcls"><i
-                                class="fa-solid fa-graduation-cap pe-3 pe-lg-2 align-middle"></i>Education</h4>
-                    </div>
-
-                    <div class="rightcontent">
-                        <div class="row mt-2 mb-3">
-                            <div class="col-lg-4">
-                                <div class="fw-bold">B.Sc. in CSE [2018 – 2023]</div>
-                                <div class="row office">
-                                    <div class="col-lg-12 col-7">
-                                        Dept. of CSE,
-                                        <br /><a href="https://www.uiu.ac.bd" target="_blank">United International
-                                            University</a>,
-                                        <br />Bangladesh.<br>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col mt-lg-0">
-                                <div class="fw-bold">CGPA: 3.09 out of 4.00</div>
-                                <div class="mt-3">
-                                    <div class="fw-bold">Relevant Coursework:</div>
-                                    Machine Learning, Web Programming, Data Structures and Algorithms, Object-Oriented
-                                    Programming (OOP), Database Management Systems (DBMS), Software Engineering, Theory
-                                    of Computation, Operating Systems, Artificial Intelligence.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row mt-2 mb-3">
-                            <div class="col-lg-4">
-                                <div class="fw-bold">Higher Secondary School Certificate[2015 – 2017]</div>
-                                <div class="row office">
-                                    <div class="col-lg-12 col-7">
-                                        Govt. Science College,
-                                        <br />Bangladesh.<br>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col mt-lg-0">
-                                <div class="fw-bold">GPA: 4.50 out of 5.00</div>
-                            </div>
-                        </div>
-
-                        <div class="row mt-2 mb-3">
-                            <div class="col-lg-4">
-                                <div class="fw-bold">Secondary School Certificate[2013 - 2015]</div>
-                                <div class="row office">
-                                    <div class="col-lg-12 col-7">
-                                        Shaheed Police Smrity College,
-                                        <br />Bangladesh.<br>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col mt-lg-0">
-                                <div class="fw-bold">GPA: 5.00 out of 5.00</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- other section -->
-                <div class="mt-0 mt-lg-2">
-                    <h4 class="headcls"><i class="fa-solid fa-language pe-3 pe-lg-2 align-middle"></i>Languages</h4>
-                    <ul>
-                        <li><span class="fw-bold">Bangla:</span> Native</li>
-                        <li><span class="fw-bold">English:</span> Proficient (IELTS 6.5, no band below 6)</li>
-                    </ul>
-                </div>
-
-                <div class="mt-0 mt-lg-2">
-                    <h4 class="headcls"><i class="fa-solid fa-lightbulb pe-3 pe-lg-2 align-middle"></i>Interests</h4>
-                    <ul>
-                        <li>Technology and innovation</li>
-                        <li>Gaming</li>
-                        <li>Reading about science, mystery, and history</li>
-                        <li>Traveling and exploring new cultures</li>
-                        <li>Photography</li>
-                    </ul>
-                </div>
-
-                <!-- professional development section -->
-                <div>
-                    <div>
-                        <h4 class="headcls"><i
-                                class="fa-solid fa-screwdriver-wrench pe-3 pe-lg-2 align-middle"></i>Professional
-                            Development</h4>
-                    </div>
-
-                    <div class='rightcontent'>
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div><a href="#" target="_blank">Web Development Course</a></div>
-                                <div class="office">Programming Hero, 2021</div>
-                                Completed a comprehensive web development course covering HTML, CSS, JavaScript, and
-                                responsive web design techniques.
-                            </div>
-                            <div class="col-lg-6 mt-2 mt-lg-0">
-                                <div><a href="#" target="_blank">Full Stack Web Development with C#, OOP, MS SQL &
-                                        ASP.NET MVC</a></div>
-                                <div class="office">Udemy, 2024</div>
-                                Learned full stack web development using C#, object-oriented programming, Microsoft SQL
-                                Server, and ASP.NET MVC framework.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- reference section -->
-                <div>
-                    <div>
-                        <h4 class="headcls"><i class="fa-solid fa-user-group pe-3 pe-lg-2 align-middle"></i>References
-                        </h4>
-                    </div>
-
-                    <div class="rightcontent">
-                        <div class="row mt-2 mb-3">
-                            <div class="col-lg-6">
-                                <div class="fw-bold">Dr. Mohammad Nurul Huda</div>
-                                <div>
-                                    Professor & Dept Head of Computer Science and Engineering,<br> United International
-                                    University
-                                    <br>
-                                    <p><b>Email:</b> <a href="mailto:mnh@cse.uiu.ac.bd"
-                                            style="font-weight:normal;">mnh@cse.uiu.ac.bd</a></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-        <!--footer-->
-        <div class="footer">
-            <strong>Ashique Murad</strong> | Email: <strong><a href="mailto:ashiquemurad@gmail.com"
-                    style="color:inherit;">ashiquemurad@gmail.com</a></strong> | All Rights Reserved | &copy; <span
-                id="currentYear"></span>
-        </div>
-
-    </div>
-
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Ashique Murad" />
+    <meta
+      name="description"
+      content="Professional Portfolio of Ashique Murad: Ex-IT Executive, Aspiring Software Developer, Tech Enthusiast. Showcasing programming skills, key projects, and professional experience."
+    />
+    <meta
+      name="keywords"
+      content="Ashique Murad, portfolio, software developer, IT Executive, web development, React, JavaScript, Python, C#, SQL, projects, resume, Bangladesh"
+    />
+    <meta
+      name="og:image"
+      content="https://placehold.co/1200x630/007B80/FFFFFF?text=Ashique+Murad+Portfolio"
+    />
+    <title>Ashique Murad | Portfolio</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        document.getElementById("currentYear").textContent = new Date().getFullYear();
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: [
+                "Inter",
+                "ui-sans-serif",
+                "system-ui",
+                "-apple-system",
+                "BlinkMacSystemFont",
+                '"Segoe UI"',
+                "Roboto",
+                '"Helvetica Neue"',
+                "Arial",
+                '"Noto Sans"',
+                "sans-serif",
+                '"Apple Color Emoji"',
+                '"Segoe UI Emoji"',
+                '"Segoe UI Symbol"',
+                '"Noto Color Emoji"',
+              ],
+              signature: ['"Great Vibes"', "cursive"],
+            },
+            colors: {
+              primary: "var(--color-primary)",
+              secondary: "var(--color-secondary)",
+              darktext: "var(--color-darktext)",
+              lighttext: "var(--color-lighttext)",
+              backgroundBody: "var(--color-bg-body)",
+              backgroundCard: "var(--color-bg-card)",
+              gradientFrom: "var(--color-gradient-from)",
+              gradientTo: "var(--color-gradient-to)",
+              contactBg: "var(--color-contact-bg)",
+            },
+            animation: {
+              fadeInDown: "fadeInDown 1s ease-out forwards",
+              fadeInLeft: "fadeInLeft 1s ease-out forwards",
+              fadeInRight: "fadeInRight 1s ease-out forwards",
+              fadeInUp: "fadeInUp 1s ease-out forwards",
+              breathe: "breathe 3s infinite ease-in-out",
+              "gradient-xy": "gradient-xy 6s ease infinite",
+              pulsingFloatGlow: "pulsingFloatGlow 3s infinite ease-in-out",
+            },
+            keyframes: {
+              fadeInDown: {
+                from: { opacity: "0", transform: "translateY(-30px)" },
+                to: { opacity: "1", transform: "translateY(0)" },
+              },
+              fadeInLeft: {
+                from: { opacity: "0", transform: "translateX(-30px)" },
+                to: { opacity: "1", transform: "translateX(0)" },
+              },
+              fadeInRight: {
+                from: { opacity: "0", transform: "translateX(30px)" },
+                to: { opacity: "1", transform: "translateX(0)" },
+              },
+              fadeInUp: {
+                from: { opacity: "0", transform: "translateY(30px)" },
+                to: { opacity: "1", transform: "translateY(0)" },
+              },
+              breathe: {
+                "0%, 100%": {
+                  transform: "scale(1)",
+                  boxShadow: "0 0 0 0 var(--color-primary-shadow)",
+                },
+                "50%": {
+                  transform: "scale(1.02)",
+                  boxShadow: "0 0 0 8px rgba(0, 0, 0, 0)",
+                },
+              },
+              "gradient-xy": {
+                "0%, 100%": {
+                  "background-size": "400% 400%",
+                  "background-position": "left center",
+                },
+                "50%": {
+                  "background-size": "200% 200%",
+                  "background-position": "right center",
+                },
+              },
+              pulsingFloatGlow: {
+                "0%, 100%": {
+                  transform: "translateY(0) scale(1)",
+                  textShadow:
+                    "0 0 15px var(--color-primary), 0 0 35px var(--color-primary-shadow)",
+                  opacity: "1",
+                },
+                "50%": {
+                  transform: "translateY(-5px) scale(1.02)",
+                  textShadow:
+                    "0 0 25px var(--color-primary), 0 0 50px var(--color-primary-shadow)",
+                  opacity: "0.98",
+                },
+              },
+            },
+          },
+        },
+      };
     </script>
-</body>
 
+    <!-- Font Awesome 6.4.2 CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <!-- Google Fonts - Great Vibes for signature-like font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body
+    class="font-sans text-darktext bg-backgroundBody min-h-screen flex flex-col antialiased"
+  >
+    <!-- Sticky Navigation Bar -->
+    <nav
+      class="bg-backgroundCard shadow-lg sticky top-0 z-50 py-4 border-b border-border transition-colors duration-300"
+    >
+      <div class="container mx-auto px-6 flex justify-between items-center">
+        <!-- Nav Bar Logo -->
+        <a
+          href="#hero"
+          class="text-primary nav-signature-logo transition-colors duration-300"
+          style="font-weight: bolder"
+          >Ashique</a
+        >
+        <div class="hidden md:flex space-x-8 items-center">
+          <a
+            href="#about"
+            class="text-lg text-lighttext hover:text-primary transition-colors font-medium relative nav-link"
+            >About</a
+          >
+          <a
+            href="#skills"
+            class="text-lg text-lighttext hover:text-primary transition-colors font-medium relative nav-link"
+            >Skills</a
+          >
+          <a
+            href="#projects"
+            class="text-lg text-lighttext hover:text-primary transition-colors font-medium relative nav-link"
+            >Projects</a
+          >
+          <a
+            href="#experience"
+            class="text-lg text-lighttext hover:text-primary transition-colors font-medium relative nav-link"
+            >Experience</a
+          >
+          <a
+            href="#contact"
+            class="text-lg text-lighttext hover:text-primary transition-colors font-medium relative nav-link"
+            >Contact</a
+          >
+          <!-- Dark Mode Toggle Button -->
+          <button
+            id="theme-toggle"
+            class="p-2 rounded-full bg-secondary hover:bg-lighttext hover:bg-opacity-20 transition-colors text-darktext text-xl"
+          >
+            <i class="fas fa-moon" id="theme-toggle-icon"></i>
+          </button>
+        </div>
+        <!-- Mobile Menu Button -->
+        <button
+          id="mobile-menu-button"
+          class="md:hidden text-darktext focus:outline-none p-2 rounded-md hover:bg-secondary transition-colors"
+        >
+          <i class="fas fa-bars text-xl"></i>
+        </button>
+      </div>
+      <!-- Mobile Menu Overlay -->
+      <div
+        id="mobile-menu-overlay"
+        class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden"
+      ></div>
+      <!-- Mobile Menu -->
+      <div
+        id="mobile-menu"
+        class="fixed top-0 right-0 w-64 h-full bg-backgroundCard shadow-xl z-50 transform translate-x-full transition-transform duration-300 ease-in-out"
+      >
+        <div class="flex justify-end p-4">
+          <button
+            id="close-mobile-menu"
+            class="text-darktext text-2xl hover:text-primary transition-colors"
+          >
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <nav class="flex flex-col p-4 space-y-4 text-lg">
+          <a
+            href="#about"
+            class="block px-4 py-2 text-darktext hover:bg-secondary rounded-md transition-colors"
+            >About</a
+          >
+          <a
+            href="#skills"
+            class="block px-4 py-2 text-darktext hover:bg-secondary rounded-md transition-colors"
+            >Skills</a
+          >
+          <a
+            href="#projects"
+            class="block px-4 py-2 text-darktext hover:bg-secondary rounded-md transition-colors"
+            >Projects</a
+          >
+          <a
+            href="#experience"
+            class="block px-4 py-2 text-darktext hover:bg-secondary rounded-md transition-colors"
+            >Experience</a
+          >
+          <a
+            href="#contact"
+            class="block px-4 py-2 text-darktext hover:bg-secondary rounded-md transition-colors"
+            >Contact</a
+          >
+          <button
+            id="theme-toggle-mobile"
+            class="w-full text-left px-4 py-2 rounded-md bg-secondary hover:bg-lighttext hover:bg-opacity-20 transition-colors text-darktext text-lg flex items-center justify-center space-x-2"
+          >
+            <i class="fas fa-moon" id="theme-toggle-icon-mobile"></i>
+            <span>Toggle Theme</span>
+          </button>
+        </nav>
+      </div>
+    </nav>
+
+    <main class="flex-grow">
+      <!-- Hero Section -->
+      <section
+        id="hero"
+        class="relative text-white py-28 px-6 text-center overflow-hidden animate-[gradient-xy_6s_ease_infinite] bg-cover bg-center"
+      >
+        <div
+          class="absolute inset-0 z-0 opacity-10"
+          style="
+            background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
+          "
+        ></div>
+        <div class="relative container mx-auto z-10">
+          <div class="flex justify-center mb-8">
+            <div
+              class="w-48 h-48 bg-backgroundCard rounded-full flex items-center justify-center shadow-2xl animate-breathe group transform transition-transform duration-300 hover:scale-105"
+            >
+              <span
+                class="text-primary font-extrabold uppercase hero-am-logo group-hover:text-primary transition-colors duration-300"
+              >
+                AM
+              </span>
+            </div>
+          </div>
+          <h1
+            class="text-5xl sm:text-7xl font-extrabold mb-4 leading-tight animate-fadeInDown drop-shadow-md"
+          >
+            Ashique Murad
+          </h1>
+          <p
+            class="text-xl sm:text-3xl font-light mb-8 animate-fadeInDown opacity-90 drop-shadow-sm"
+          >
+            Logistics Professional at Aim Fast Logistics Limited, Aspiring
+            Software Developer, Tech Enthusiast
+          </p>
+          <div class="flex flex-wrap justify-center gap-4 animate-fadeInUp">
+            <a
+              href="mailto:ashiquemurad@gmail.com"
+              class="bg-backgroundCard text-primary py-3 px-8 rounded-full font-semibold text-lg hover:bg-secondary transition-all duration-300 shadow-lg flex items-center transform hover:scale-105 group"
+            >
+              <i
+                class="fa-solid fa-envelope mr-3 group-hover:text-primary transition-colors"
+              ></i>
+              <span class="group-hover:text-darktext transition-colors"
+                >Email Me</span
+              >
+            </a>
+            <a
+              href="https://www.linkedin.com/in/ashique-murad-07834b120/"
+              target="_blank"
+              class="border-2 border-white text-white py-3 px-8 rounded-full font-semibold text-lg hover:bg-backgroundCard hover:text-primary transition-all duration-300 shadow-lg flex items-center transform hover:scale-105 group"
+            >
+              <i
+                class="fa-brands fa-linkedin-in mr-3 group-hover:text-primary transition-colors"
+              ></i>
+              <span class="group-hover:text-darktext transition-colors"
+                >LinkedIn</span
+              >
+            </a>
+            <a
+              href="https://github.com/Ashique01"
+              target="_blank"
+              class="border-2 border-white text-white py-3 px-8 rounded-full font-semibold text-lg hover:bg-backgroundCard hover:text-primary transition-all duration-300 shadow-lg flex items-center transform hover:scale-105 group"
+            >
+              <i
+                class="fa-brands fa-github mr-3 group-hover:text-primary transition-colors"
+              ></i>
+              <span class="group-hover:text-darktext transition-colors"
+                >GitHub</span
+              >
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section
+        id="about"
+        class="py-20 px-6 bg-backgroundCard shadow-xl rounded-xl mx-auto max-w-7xl -mt-16 relative z-10 mb-20 animate-fadeInUp transition-colors duration-300"
+      >
+        <div
+          class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
+        >
+          <div class="text-center md:text-left animate-fadeInLeft">
+            <h2
+              class="text-4xl font-bold text-primary mb-6 border-b-4 border-primary pb-3 inline-block"
+            >
+              About Me
+            </h2>
+            <p class="text-lg leading-relaxed text-lighttext mt-4">
+              I am Ashique Murad, a dedicated and aspiring software developer
+              with a background as an IT Executive. My journey has equipped me
+              with a robust understanding of both hardware and software systems,
+              complemented by a strong passion for coding and building
+              innovative solutions.
+            </p>
+            <p class="text-lg leading-relaxed text-lighttext mt-4">
+              I thrive in dynamic environments and am eager to leverage my
+              skills in C, C#, .Net Core, Python, SQL, HTML, JavaScript, and
+              React to contribute to challenging projects and grow within the
+              tech industry. I am a team player with excellent management skills
+              and a commitment to writing well-organized, structured reports.
+            </p>
+          </div>
+          <div class="flex justify-center md:justify-end animate-fadeInRight">
+            <!-- Professional portrait with adjusted position -->
+            <img
+              src="me.png"
+              alt="Ashique Murad professional portrait"
+              class="rounded-full shadow-2xl border-4 border-primary object-cover object-top md:object-[center_40%] w-64 h-64 md:w-80 md:h-80"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills Section -->
+      <section
+        id="skills"
+        class="py-20 px-6 bg-secondary transition-colors duration-300"
+      >
+        <div class="container mx-auto">
+          <h2
+            class="text-4xl font-bold text-center text-primary mb-12 border-b-4 border-primary pb-3 inline-block"
+          >
+            Technical Skills
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
+            <!-- Skill Card 1: Programming Languages -->
+            <div
+              class="bg-backgroundCard p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 animate-fadeInLeft"
+            >
+              <h3
+                class="text-xl font-semibold mb-4 text-center text-darktext flex items-center justify-center"
+              >
+                <i class="fa-solid fa-code text-primary mr-3 text-2xl"></i
+                >Programming Languages
+              </h3>
+              <div class="flex flex-wrap justify-center gap-3">
+                <span class="skill-tag">C</span>
+                <span class="skill-tag">C#</span>
+                <span class="skill-tag">.Net Core</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">Pandas</span>
+                <span class="skill-tag">NumPy</span>
+                <span class="skill-tag">Matplotlib</span>
+                <span class="skill-tag">SQL</span>
+                <span class="skill-tag">HTML</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">React</span>
+                <span class="skill-tag">Basic Java</span>
+              </div>
+            </div>
+            <!-- Skill Card 2: Tools & Systems -->
+            <div
+              class="bg-backgroundCard p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 animate-fadeInRight"
+            >
+              <h3
+                class="text-xl font-semibold mb-4 text-center text-darktext flex items-center justify-center"
+              >
+                <i class="fa-solid fa-tools text-primary mr-3 text-2xl"></i
+                >Tools & Systems
+              </h3>
+              <div class="flex flex-wrap justify-center gap-3">
+                <span class="skill-tag">Windows</span>
+                <span class="skill-tag">Linux</span>
+                <span class="skill-tag">Git</span>
+                <span class="skill-tag">GitHub</span>
+                <span class="skill-tag">VS Code</span>
+                <span class="skill-tag">IntelliJ IDEA</span>
+                <span class="skill-tag">PyCharm</span>
+                <span class="skill-tag">Jupyter Notebook</span>
+                <span class="skill-tag">Audacity</span>
+                <span class="skill-tag">Power BI</span>
+              </div>
+            </div>
+            <!-- Skill Card 3: Professional Capabilities -->
+            <div
+              class="bg-backgroundCard p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 animate-fadeInLeft"
+            >
+              <h3
+                class="text-xl font-semibold mb-4 text-center text-darktext flex items-center justify-center"
+              >
+                <i class="fa-solid fa-briefcase text-primary mr-3 text-2xl"></i
+                >Professional Capabilities
+              </h3>
+              <div class="flex flex-wrap justify-center gap-3">
+                <span class="skill-tag">Microsoft Office Suite</span>
+                <span class="skill-tag">Project Management</span>
+                <span class="skill-tag">Team Collaboration</span>
+                <span class="skill-tag">Report Writing</span>
+                <span class="skill-tag">IT Support & Troubleshooting</span>
+              </div>
+            </div>
+            <!-- Skill Card 4: Other Skills -->
+            <div
+              class="bg-backgroundCard p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 animate-fadeInRight"
+            >
+              <h3
+                class="text-xl font-semibold mb-4 text-center text-darktext flex items-center justify-center"
+              >
+                <i class="fa-solid fa-lightbulb text-primary mr-3 text-2xl"></i
+                >Other Skills
+              </h3>
+              <div class="flex flex-wrap justify-center gap-3">
+                <span class="skill-tag">Problem Solving</span>
+                <span class="skill-tag">Analytical Thinking</span>
+                <span class="skill-tag">Adaptability & Learning</span>
+                <span class="skill-tag">Well-Organized Documentation</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section
+        id="projects"
+        class="py-20 px-6 bg-backgroundCard transition-colors duration-300"
+      >
+        <div class="container mx-auto">
+          <h2
+            class="text-4xl font-bold text-center text-primary mb-12 border-b-4 border-primary pb-3 inline-block"
+          >
+            Key Projects
+          </h2>
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mt-10"
+          >
+            <!-- Project Card 1: AM Dental Clinic -->
+            <div
+              class="bg-backgroundCard border border-border rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col items-center text-center p-8 animate-fadeInLeft"
+            >
+              <div class="text-primary mb-6 text-6xl">
+                <i class="fa-solid fa-tooth"></i>
+              </div>
+              <h3 class="text-2xl font-semibold mb-2 text-darktext">
+                AM Dental Clinic
+              </h3>
+              <p class="text-lighttext mb-6 flex-grow">
+                Developed a responsive web application for AM Dental Clinic,
+                enabling patients to easily book appointments, view services,
+                and manage their profiles. The platform features intuitive UI/UX
+                built with ReactJs, seamless navigation with HTML/CSS, dynamic
+                interactions with JavaScript, and a robust layout powered by
+                Bootstrap.
+              </p>
+              <a
+                href="https://am-dental-clinic.netlify.app/"
+                target="_blank"
+                class="bg-primary text-white py-2 px-6 rounded-full font-medium hover:bg-blue-600 transition-colors duration-300 flex items-center justify-center"
+              >
+                View Project
+                <i
+                  class="fa-solid fa-arrow-up-right-from-square ml-2 text-sm"
+                ></i>
+              </a>
+            </div>
+            <!-- Project Card 2: DSM: Delivery Service Management -->
+            <div
+              class="bg-backgroundCard border border-border rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col items-center text-center p-8 animate-fadeInUp"
+            >
+              <div class="text-primary mb-6 text-6xl">
+                <i class="fa-solid fa-truck-fast"></i>
+              </div>
+              <h3 class="text-2xl font-semibold mb-2 text-darktext">
+                DSM: Delivery Service Management
+              </h3>
+              <p class="text-lighttext mb-6 flex-grow">
+                Built a comprehensive web application for managing delivery
+                services, including order placement, real-time tracking, and
+                dispatcher functionalities. This system optimizes logistics and
+                enhances communication between customers and delivery personnel,
+                utilizing modern web development practices for efficient data
+                handling.
+              </p>
+              <a
+                href="https://delivery-management-syst-93325.web.app/"
+                target="_blank"
+                class="bg-primary text-white py-2 px-6 rounded-full font-medium hover:bg-blue-600 transition-colors duration-300 flex items-center justify-center"
+              >
+                View Project
+                <i
+                  class="fa-solid fa-arrow-up-right-from-square ml-2 text-sm"
+                ></i>
+              </a>
+            </div>
+            <!-- Project Card 3: Local Box Store -->
+            <div
+              class="bg-backgroundCard border border-border rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col items-center text-center p-8 animate-fadeInRight"
+            >
+              <div class="text-primary mb-6 text-6xl">
+                <i class="fa-solid fa-store"></i>
+              </div>
+              <h3 class="text-2xl font-semibold mb-2 text-darktext">
+                Local Box Store
+              </h3>
+              <p class="text-lighttext mb-6 flex-grow">
+                Created a full-featured e-commerce web application where users
+                can browse, search, and purchase daily essential goods. The
+                platform includes product listings, shopping cart functionality,
+                user authentication, and secure checkout, all designed for a
+                smooth and intuitive online shopping experience.
+              </p>
+              <a
+                href="https://kena-becha-f231d.web.app/"
+                target="_blank"
+                class="bg-primary text-white py-2 px-6 rounded-full font-medium hover:bg-blue-600 transition-colors duration-300 flex items-center justify-center"
+              >
+                View Project
+                <i
+                  class="fa-solid fa-arrow-up-right-from-square ml-2 text-sm"
+                ></i>
+              </a>
+            </div>
+            <!-- Project Card 4: Paragraph Generator -->
+            <div
+              class="bg-backgroundCard border border-border rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col items-center text-center p-8 animate-fadeInLeft"
+            >
+              <div class="text-primary mb-6 text-6xl">
+                <i class="fa-solid fa-paragraph"></i>
+              </div>
+              <h3 class="text-2xl font-semibold mb-2 text-darktext">
+                Paragraph Generator
+              </h3>
+              <p class="text-lighttext mb-6 flex-grow">
+                Developed a sleek React.js web application that provides a
+                simple tool for generating placeholder paragraphs. Users can
+                specify the number of paragraphs, offering a quick utility for
+                designers and developers needing dummy text for their layouts.
+                It demonstrates effective state management and component-based
+                architecture in React.
+              </p>
+              <a
+                href="https://paragraph-generator-handlelingbutton.netlify.app/"
+                target="_blank"
+                class="bg-primary text-white py-2 px-6 rounded-full font-medium hover:bg-blue-600 transition-colors duration-300 flex items-center justify-center"
+              >
+                View Project
+                <i
+                  class="fa-solid fa-arrow-up-right-from-square ml-2 text-sm"
+                ></i>
+              </a>
+            </div>
+            <!-- Project Card 5: Food Explorer Functionality -->
+            <div
+              class="bg-backgroundCard border border-border rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col items-center text-center p-8 animate-fadeInUp"
+            >
+              <div class="text-primary mb-6 text-6xl">
+                <i class="fa-solid fa-bowl-food"></i>
+              </div>
+              <h3 class="text-2xl font-semibold mb-2 text-darktext">
+                Food Explorer Functionality
+              </h3>
+              <p class="text-lighttext mb-6 flex-grow">
+                Designed and implemented a web application to explore various
+                food items. The app allows users to filter food by meal type and
+                view detailed information for each item, demonstrating data
+                fetching, filtering, and dynamic content rendering in a
+                user-friendly interface.
+              </p>
+              <a
+                href="https://food-explorer-functionality.netlify.app"
+                target="_blank"
+                class="bg-primary text-white py-2 px-6 rounded-full font-medium hover:bg-blue-600 transition-colors duration-300 flex items-center justify-center"
+              >
+                View Project
+                <i
+                  class="fa-solid fa-arrow-up-right-from-square ml-2 text-sm"
+                ></i>
+              </a>
+            </div>
+            <!-- Project Card 6: Academic Projects -->
+            <div
+              class="bg-backgroundCard border border-border rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col items-center text-center p-8 animate-fadeInRight"
+            >
+              <div class="text-primary mb-6 text-6xl">
+                <i class="fa-solid fa-graduation-cap"></i>
+              </div>
+              <h3 class="text-2xl font-semibold mb-2 text-darktext">
+                Academic Projects
+              </h3>
+              <p class="text-lighttext text-sm italic mb-3">
+                Various Technologies
+              </p>
+              <ul
+                class="list-disc list-inside text-lighttext mb-6 flex-grow text-left w-full pl-6"
+              >
+                <li>
+                  <span class="font-bold">Spam Email Detection:</span> Using ML
+                  algorithms (Decision Tree, Naive Bayes, Random Forest, Neural
+                  Network).
+                </li>
+                <li>
+                  <span class="font-bold">Learning Mate:</span> Platform for
+                  academic problem-solving (PHP, MySQL, Bootstrap & JS).
+                </li>
+                <li>
+                  <span class="font-bold">Bloodcon:</span> Web app for blood
+                  donors (PHP, MySQL, Bootstrap, JS).
+                </li>
+                <li>
+                  <span class="font-bold">JoyMaker:</span> Web app for unused
+                  medicines (Reactjs, MongoDB, Bootstrap).
+                </li>
+              </ul>
+              <span class="text-sm text-gray-500 italic mt-auto"
+                >Demonstrating a strong foundation in various
+                technologies.</span
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Experience & Education Section -->
+      <section
+        id="experience"
+        class="py-20 px-6 bg-secondary transition-colors duration-300"
+      >
+        <div class="container mx-auto">
+          <h2
+            class="text-4xl font-bold text-center text-primary mb-12 border-b-4 border-primary pb-3 inline-block"
+          >
+            Professional Journey
+          </h2>
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-10">
+            <!-- Experience Column -->
+            <div class="space-y-10">
+              <h3 class="text-3xl font-bold text-darktext mb-6">Experience</h3>
+              <!-- IT Executive -->
+              <div
+                class="bg-backgroundCard p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 animate-fadeInLeft"
+              >
+                <div class="flex justify-between items-start mb-3">
+                  <h4 class="text-xl font-semibold text-primary">
+                    IT Executive
+                  </h4>
+                  <span class="text-gray-600 text-sm italic"
+                    >Aug 2023 - Jun 2024</span
+                  >
+                </div>
+                <p class="text-lg font-medium text-darktext mb-3">
+                  Legalized Education Bangladesh Ltd, Bangladesh
+                </p>
+                <ul class="list-disc list-inside text-lighttext space-y-2">
+                  <li>
+                    Provided comprehensive IT support, including software and
+                    hardware troubleshooting, and network administration.
+                  </li>
+                  <li>
+                    Collaborated effectively with cross-functional teams to
+                    optimize IT solutions and streamline workflows.
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Freelancer -->
+              <div
+                class="bg-backgroundCard p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 animate-fadeInLeft"
+              >
+                <div class="flex justify-between items-start mb-3">
+                  <h4 class="text-xl font-semibold text-primary">
+                    Freelancer (Project-based Work)
+                  </h4>
+                  <span class="text-gray-600 text-sm italic"
+                    >Apr 2024 - Present</span
+                  >
+                </div>
+                <p class="text-lg font-medium text-darktext mb-3">
+                  Remote, Bangladesh
+                </p>
+                <p class="text-lighttext">
+                  Actively involved in client projects and internal initiatives
+                  under mentorship, gaining practical experience in software
+                  development, project management, and team collaboration.
+                </p>
+              </div>
+
+              <!-- Executive (Import Department) -->
+              <div
+                class="bg-backgroundCard p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 animate-fadeInLeft"
+              >
+                <div class="flex justify-between items-start mb-3">
+                  <h4 class="text-xl font-semibold text-primary">
+                    Executive (Import Department)
+                  </h4>
+                  <span class="text-gray-600 text-sm italic"
+                    >[Start Date] - Present</span
+                  >
+                </div>
+                <p class="text-lg font-medium text-darktext mb-3">
+                  [Your Company Name Here], 49, Nayapaltan, Dhaka 1000
+                </p>
+                <ul class="list-disc list-inside text-lighttext space-y-2">
+                  <li>
+                    Manages import operations and coordinates departmental
+                    activities to ensure smooth workflow.
+                  </li>
+                  <li>
+                    Engages in freelance projects on an opportunistic basis to
+                    leverage diverse skill sets.
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Education & More Column -->
+            <div class="space-y-10 lg:mt-0">
+              <h3 class="text-3xl font-bold text-darktext mb-6">Education</h3>
+              <!-- Bachelor's Degree -->
+              <div
+                class="bg-backgroundCard p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 animate-fadeInRight"
+              >
+                <div class="flex justify-between items-start mb-3">
+                  <h4 class="text-xl font-semibold text-primary">
+                    Bachelor of Science in CSE
+                  </h4>
+                  <span class="text-gray-600 text-sm italic">2018 – 2023</span>
+                </div>
+                <p class="text-lg font-medium text-darktext mb-1">
+                  Dept. of CSE, United International University, Bangladesh.
+                </p>
+                <p class="text-lighttext text-sm italic mb-3">
+                  CGPA: 3.09 out of 4.00
+                </p>
+                <h5 class="text-lg font-medium text-darktext mb-2">
+                  Relevant Coursework:
+                </h5>
+                <ul class="list-disc list-inside text-lighttext space-y-1 pl-4">
+                  <li>Machine Learning, Web Programming</li>
+                  <li>
+                    Data Structures and Algorithms, Object-Oriented Programming
+                    (OOP)
+                  </li>
+                  <li>
+                    Database Management Systems (DBMS), Software Engineering
+                  </li>
+                  <li>
+                    Theory of Computation, Operating Systems, Artificial
+                    Intelligence
+                  </li>
+                </ul>
+              </div>
+
+              <!-- HSC -->
+              <div
+                class="bg-backgroundCard p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 animate-fadeInRight"
+              >
+                <div class="flex justify-between items-start mb-3">
+                  <h4 class="text-xl font-semibold text-primary">
+                    Higher Secondary School Certificate (HSC)
+                  </h4>
+                  <span class="text-gray-600 text-sm italic">2015 – 2017</span>
+                </div>
+                <p class="text-lg font-medium text-darktext mb-1">
+                  Govt. Science College, Bangladesh.
+                </p>
+                <p class="text-lighttext text-sm italic mb-3">
+                  GPA: 4.50 out of 5.00
+                </p>
+              </div>
+
+              <!-- SSC -->
+              <div
+                class="bg-backgroundCard p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 animate-fadeInRight"
+              >
+                <div class="flex justify-between items-start mb-3">
+                  <h4 class="text-xl font-semibold text-primary">
+                    Secondary School Certificate (SSC)
+                  </h4>
+                  <span class="text-gray-600 text-sm italic">2013 – 2015</span>
+                </div>
+                <p class="text-lg font-medium text-darktext mb-1">
+                  Shaheed Police Smrity College, Bangladesh.
+                </p>
+                <p class="text-lighttext text-sm italic mb-3">
+                  GPA: 5.00 out of 5.00
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- New Sections below Experience & Education (Full Width) -->
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-16">
+            <!-- Languages -->
+            <div class="space-y-10 animate-fadeInLeft">
+              <h3 class="text-3xl font-bold text-darktext mb-6">Languages</h3>
+              <div
+                class="bg-backgroundCard p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+              >
+                <ul class="list-disc list-inside text-lighttext space-y-2">
+                  <li>
+                    <span class="font-semibold text-darktext">Bangla:</span>
+                    Native
+                  </li>
+                  <li>
+                    <span class="font-semibold text-darktext">English:</span>
+                    Proficient (IELTS 6.5, no band below 6)
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Interests -->
+            <div class="space-y-10 animate-fadeInRight">
+              <h3 class="text-3xl font-bold text-darktext mb-6">Interests</h3>
+              <div
+                class="bg-backgroundCard p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+              >
+                <div class="flex flex-wrap gap-4 text-lighttext">
+                  <span
+                    class="bg-secondary px-4 py-2 rounded-full text-darktext font-medium text-sm border border-border flex items-center"
+                    ><i class="fa-solid fa-code mr-2"></i>Technology &
+                    Innovation</span
+                  >
+                  <span
+                    class="bg-secondary px-4 py-2 rounded-full text-darktext font-medium text-sm border border-border flex items-center"
+                    ><i class="fa-solid fa-gamepad mr-2"></i>Gaming</span
+                  >
+                  <span
+                    class="bg-secondary px-4 py-2 rounded-full text-darktext font-medium text-sm border border-border flex items-center"
+                    ><i class="fa-solid fa-book-open-reader mr-2"></i>Reading
+                    (Science, Mystery, History)</span
+                  >
+                  <span
+                    class="bg-secondary px-4 py-2 rounded-full text-darktext font-medium text-sm border border-border flex items-center"
+                    ><i class="fa-solid fa-plane-departure mr-2"></i>Traveling &
+                    Exploring</span
+                  >
+                  <span
+                    class="bg-secondary px-4 py-2 rounded-full text-darktext font-medium text-sm border border-border flex items-center"
+                    ><i class="fa-solid fa-camera mr-2"></i>Photography</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Professional Development -->
+            <div class="lg:col-span-2 space-y-10 mt-16 animate-fadeInUp">
+              <h3 class="text-3xl font-bold text-darktext mb-6">
+                Professional Development
+              </h3>
+              <div
+                class="bg-backgroundCard p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+              >
+                <ul class="list-disc list-inside text-lighttext space-y-4">
+                  <li>
+                    <span class="font-semibold text-darktext"
+                      >Web Development Course</span
+                    ><br />
+                    <span class="italic text-gray-600"
+                      >Programming Hero, 2021</span
+                    ><br />
+                    Completed a comprehensive web development course covering
+                    HTML, CSS, JavaScript, and responsive web design techniques.
+                  </li>
+                  <li>
+                    <span class="font-semibold text-darktext"
+                      >Full Stack Web Development with C#, OOP, MS SQL & ASP.NET
+                      MVC</span
+                    ><br />
+                    <span class="italic text-gray-600">Udemy, 2024</span><br />
+                    Learned full stack web development using C#, object-oriented
+                    programming, Microsoft SQL Server, and ASP.NET MVC
+                    framework.
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- References -->
+            <div class="lg:col-span-2 space-y-10 mt-16 animate-fadeInUp">
+              <h3 class="text-3xl font-bold text-darktext mb-6">References</h3>
+              <div
+                class="bg-backgroundCard p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+              >
+                <p class="text-lg font-medium text-darktext">
+                  Dr. Mohammad Nurul Huda
+                </p>
+                <p class="text-lighttext italic">
+                  Professor & Dept Head of Computer Science and Engineering,<br />United
+                  International University
+                </p>
+                <p class="text-lighttext">
+                  <i class="fa-solid fa-envelope mr-2 text-primary"></i>Email:
+                  <a
+                    href="mailto:mnh@cse.uiu.ac.bd"
+                    class="text-primary hover:underline"
+                    >mnh@cse.uiu.ac.bd</a
+                  >
+                </p>
+                <p class="text-lighttext mt-4">
+                  References available upon request for others.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <!-- Contact Section -->
+      <section
+        id="contact"
+        class="py-20 px-6 text-white bg-[#87CEEB] transition-colors duration-300"
+      >
+        <div class="container mx-auto text-center">
+          <h2
+            class="text-4xl font-bold mb-12 border-b-4 border-white pb-3 inline-block"
+          >
+            Get In Touch
+          </h2>
+          <p class="text-xl mb-10 max-w-3xl mx-auto opacity-90">
+            I'm always open to new opportunities and collaborations. Feel free
+            to reach out through the form below:
+          </p>
+
+          <!-- Contact Form -->
+          <form
+            action="https://formspree.io/f/mrbkylye"
+            method="POST"
+            class="max-w-xl mx-auto text-left bg-gray-100 bg-opacity-90 p-6 rounded-lg shadow-md backdrop-blur-sm"
+          >
+            <div class="mb-4">
+              <label class="block mb-2 text-gray-800 font-semibold" for="name"
+                >Name</label
+              >
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                class="w-full px-4 py-2 rounded text-black"
+                placeholder="Your Name"
+              />
+            </div>
+            <div class="mb-4">
+              <label class="block mb-2 text-gray-800 font-semibold" for="email"
+                >Email</label
+              >
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                class="w-full px-4 py-2 rounded text-black"
+                placeholder="Your Email"
+              />
+            </div>
+            <div class="mb-4">
+              <label
+                class="block mb-2 text-gray-800 font-semibold"
+                for="message"
+                >Message</label
+              >
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                required
+                class="w-full px-4 py-2 rounded text-black"
+                placeholder="Your Message"
+              ></textarea>
+            </div>
+            <button
+              type="submit"
+              class="bg-blue-600 text-white font-bold py-2 px-6 rounded hover:bg-blue-700 transition-colors duration-300"
+            >
+              Send Message
+            </button>
+          </form>
+
+          <!-- Social Links -->
+          <div class="flex justify-center space-x-8 mt-12">
+            <a
+              href="https://github.com/Ashique01"
+              target="_blank"
+              class="text-white text-5xl hover:text-blue-200 transition-colors transform hover:scale-110"
+            >
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/ashique-murad-07834b120/"
+              target="_blank"
+              class="text-white text-5xl hover:text-blue-200 transition-colors transform hover:scale-110"
+            >
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer
+      class="bg-backgroundCard text-lighttext py-8 text-center text-sm transition-colors duration-300"
+    >
+      <div class="container mx-auto px-6">
+        <p>
+          &copy; <span id="currentYear"></span> Ashique Murad. All Rights
+          Reserved.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button
+      id="back-to-top"
+      class="fixed bottom-8 right-8 bg-primary text-white p-4 rounded-full shadow-lg transition-all duration-300 ease-in-out hover:scale-110 focus:outline-none focus:ring-4 focus:ring-primary focus:ring-opacity-50 z-40 opacity-0 invisible"
+      aria-label="Scroll to top"
+    >
+      <i class="fas fa-arrow-up text-xl"></i>
+    </button>
+
+    <!-- JavaScript for smooth scrolling and mobile menu -->
+    <script src="index.js"></script>
+  </body>
 </html>

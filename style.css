@@ -1,0 +1,270 @@
+      /* Define CSS Variables for Light Theme (Default) */
+      :root {
+        --color-primary: #0062e6;
+        /* Deeper, more vibrant blue */
+        --color-secondary: #f0f8ff;
+        /* Slightly warmer very light blue */
+        --color-darktext: #212529;
+        /* Dark charcoal for main text */
+        --color-lighttext: #495057;
+        /* Medium gray for secondary text */
+        --color-bg-body: #f8f9fa;
+        /* Very light gray background */
+        --color-bg-card: #ffffff;
+        /* Pure white for cards */
+        --color-gradient-from: #a8dadc;
+        /* Light Blue for hero section in light mode */
+        --color-gradient-to: #7aa1ff;
+        /* Sky Blue for hero section in light mode */
+        --color-shadow-base: rgba(0, 0, 0, 0.12);
+        /* Slightly stronger light shadow */
+        --color-border: #dee2e6;
+        /* Light border */
+        --color-scroll-thumb: #0062e6;
+        /* Scrollbar thumb color - Primary Blue */
+        --color-scroll-thumb-hover: #0047a3;
+        /* Scrollbar thumb hover color - darker Primary Blue */
+        --color-primary-shadow: rgba(0, 98, 230, 0.35);
+        /* Softer primary shadow for the new primary blue */
+        --color-contact-bg: var(--color-primary);
+        /* Contact section background now uses primary color */
+      }
+
+      /* Define CSS Variables for Dark Theme (Sophisticated Dark) */
+      body.dark-mode {
+        --color-primary: #8ab6f9;
+        /* Muted, yet vibrant blue (Accent on dark) */
+        --color-secondary: #2c353d;
+        /* Darker blue-gray for secondary backgrounds */
+        --color-darktext: #f8f9fa;
+        /* Near white for main text */
+        --color-lighttext: #ced4da;
+        /* Light gray for secondary text */
+        --color-bg-body: #1a2026;
+        /* Deep dark blue-gray background */
+        --color-bg-card: #232c35;
+        /* Slightly lighter dark blue-gray for cards */
+        --color-gradient-from: #1a2026;
+        /* Dark Cool Navy for hero in dark mode */
+        --color-gradient-to: #2c3e50;
+        /* Cool Navy for hero in dark mode */
+        --color-shadow-base: rgba(0, 0, 0, 0.7);
+        /* Stronger shadow for dark mode */
+        --color-border: #4a5568;
+        /* Dark border */
+        --color-scroll-thumb: #8ab6f9;
+        --color-scroll-thumb-hover: #6998dd;
+        --color-primary-shadow: rgba(138, 182, 249, 0.45);
+        /* Softer primary shadow for blue in dark mode */
+        --color-contact-bg: var(--color-bg-card);
+        /* Contact section background now uses card background in dark mode */
+      }
+
+      /* Apply theme-dependent colors using CSS variables */
+      body {
+        background-color: var(--color-bg-body);
+        color: var(--color-darktext);
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+
+      /* Custom scrollbar for a cleaner look (uses theme variables) */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: var(--color-secondary);
+        border-radius: 10px;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: var(--color-scroll-thumb);
+        border-radius: 10px;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: var(--color-scroll-thumb-hover);
+      }
+
+      /* Hero Section Gradient - uses specific Tailwind classes that map to variables */
+      #hero {
+        background-image: linear-gradient(
+          135deg,
+          var(--color-gradient-from),
+          var(--color-gradient-to)
+        );
+      }
+
+      /* Adjust colors for elements that don't directly use Tailwind's color variables */
+      .bg-primary {
+        background-color: var(--color-primary);
+      }
+
+      .text-primary {
+        color: var(--color-primary);
+      }
+
+      .border-primary {
+        border-color: var(--color-primary);
+      }
+
+      .hover\:text-primary:hover {
+        color: var(--color-primary);
+      }
+
+      .hover\:bg-primary:hover {
+        background-color: var(--color-primary);
+      }
+
+      .bg-secondary {
+        background-color: var(--color-secondary);
+      }
+
+      .text-darktext {
+        color: var(--color-darktext);
+      }
+
+      .text-lighttext {
+        color: var(--color-lighttext);
+      }
+
+      .bg-white {
+        /* This class is now effectively repurposed by var(--color-bg-card) */
+        background-color: var(--color-bg-card);
+      }
+
+      /* Override default Tailwind shadow for consistency with new dark theme */
+      .shadow-lg {
+        box-shadow: 0 10px 15px -3px var(--color-shadow-base),
+          0 4px 6px -2px var(--color-shadow-base);
+      }
+
+      .shadow-xl {
+        box-shadow: 0 20px 25px -5px var(--color-shadow-base),
+          0 10px 10px -5px var(--color-shadow-base);
+      }
+
+      .shadow-2xl {
+        box-shadow: 0 25px 50px -12px var(--color-shadow-base);
+      }
+
+      .border-gray-100 {
+        /* This class is now effectively repurposed by var(--color-border) */
+        border-color: var(--color-border);
+      }
+
+      .border-gray-200 {
+        /* This class is now effectively repurposed by var(--color-border) */
+        border-color: var(--color-border);
+      }
+
+      /* Use theme border color */
+      .border {
+        border-color: var(--color-border);
+      }
+
+      /* Custom Skill Tag Styling */
+      .skill-tag {
+        background-color: var(--color-secondary);
+        color: var(--color-darktext);
+        padding: 0.4rem 0.8rem;
+        border-radius: 9999px;
+        /* Full rounded corners */
+        font-size: 0.9rem;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        /* Increased transition duration */
+        border: 1px solid var(--color-border);
+        cursor: default;
+        white-space: nowrap;
+        /* Prevent breaking tags */
+      }
+
+      .skill-tag:hover {
+        background-color: var(--color-primary);
+        color: var(--color-bg-card);
+        /* Text color should be lighter on primary hover */
+        transform: translateY(-3px) scale(1.08);
+        /* More pronounced transform */
+        box-shadow: 0 6px 12px var(--color-shadow-base);
+        /* Stronger shadow on hover */
+      }
+
+      /* Class for the 'AM' logo text within the hero circular logo */
+      .hero-am-logo {
+        font-size: 3.5rem;
+        /* Smaller base font size for AM */
+        font-weight: 900;
+        /* Extra bold */
+        text-transform: uppercase;
+        position: relative;
+        /* For text shadow */
+        animation: pulsingFloatGlow 3s infinite ease-in-out;
+        /* Apply new animation */
+      }
+
+      /* Responsive adjustments for .hero-am-logo */
+      @media (min-width: 640px) {
+        /* sm */
+        .hero-am-logo {
+          font-size: 4.5rem;
+        }
+      }
+
+      @media (min-width: 768px) {
+        /* md */
+        .hero-am-logo {
+          font-size: 5.5rem;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        /* lg */
+        .hero-am-logo {
+          font-size: 6.5rem;
+        }
+      }
+
+      /* Custom style for the signature logo text in Nav bar */
+      .nav-signature-logo {
+        font-family: "Great Vibes", cursive;
+        font-style: italic;
+        font-size: 2.25rem;
+        /* text-3xl from Tailwind, adjust as needed */
+        line-height: 1;
+      }
+
+      /* Adjusted contact icons size */
+      .contact-icon {
+        font-size: 2.5rem;
+        /* Slightly larger for impact */
+      }
+
+      @media (min-width: 640px) {
+        .contact-icon {
+          font-size: 2.25rem;
+          /* text-3xl for icons on larger screens */
+        }
+      }
+
+      /* Contact section background to use the new variable,
+           Removed 'color' property to allow 'text-white' Tailwind class to work */
+      #contact {
+        background-color: var(--color-contact-bg);
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+
+      #contact .border-white {
+        border-color: var(--color-bg-card);
+        /* Adjust border color for consistency */
+      }
+
+      #contact a {
+        /* Ensure links are visible; 'text-white' class in HTML will apply here */
+      }
+
+      #contact a:hover {
+        color: rgba(255, 255, 255, 0.8);
+        /* Subtle hover effect for links */
+      }
